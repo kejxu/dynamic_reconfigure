@@ -358,8 +358,8 @@ ${doline} ${linenum} "${filename}"
       {
         __description_message__.groups.push_back(**i);
       }
-      __max__.__toMessage__(__description_message__.max, __param_descriptions__, __group_descriptions__);
-      __min__.__toMessage__(__description_message__.min, __param_descriptions__, __group_descriptions__);
+      __max__.__toMessage__(__description_message__.max_value, __param_descriptions__, __group_descriptions__);
+      __min__.__toMessage__(__description_message__.min_value, __param_descriptions__, __group_descriptions__);
       __default__.__toMessage__(__description_message__.dflt, __param_descriptions__, __group_descriptions__);
     }
     std::vector<${configname}Config::AbstractParamDescriptionConstPtr> __param_descriptions__;

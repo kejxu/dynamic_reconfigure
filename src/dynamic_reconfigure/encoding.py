@@ -83,8 +83,8 @@ class Config(dict):
 
 def encode_description(descr):
     msg = ConfigDescrMsg()
-    msg.max = encode_config(descr.max)
-    msg.min = encode_config(descr.min)
+    msg.max_value = encode_config(descr.max)
+    msg.min_value = encode_config(descr.min)
     msg.dflt = encode_config(descr.defaults)
     msg.groups = encode_groups(None, descr.config_description)
     return msg
@@ -161,8 +161,8 @@ def group_dict(group):
 
 
 def decode_description(msg):
-    mins = decode_config(msg.min)
-    maxes = decode_config(msg.max)
+    mins = decode_config(msg.min_value)
+    maxes = decode_config(msg.max_value)
     defaults = decode_config(msg.dflt)
     groups = {}
     grouplist = msg.groups
