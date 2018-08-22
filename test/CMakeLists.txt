@@ -5,8 +5,10 @@ target_link_libraries(dynamic_reconfigure-ref_server dynamic_reconfigure_config_
 add_dependencies(tests dynamic_reconfigure-ref_server)
 
 add_rostest_gtest(dynamic_reconfigure-test_client test_cpp_simple_client.launch test_client.cpp)
-add_dependencies(dynamic_reconfigure-test_client ${PROJECT_NAME}_gencfg ${PROJECT_NAME}_generate_messages_py)
-target_link_libraries(dynamic_reconfigure-test_client dynamic_reconfigure_config_init_mutex ${catkin_LIBRARIES})
+if (TARGET dynamic_reconfigure-test_client)
+  add_dependencies(dynamic_reconfigure-test_client ${PROJECT_NAME}_gencfg ${PROJECT_NAME}_generate_messages_py)
+  target_link_libraries(dynamic_reconfigure-test_client dynamic_reconfigure_config_init_mutex ${catkin_LIBRARIES})
+endif()
 
 add_dependencies(tests dynamic_reconfigure-test_client)
 
