@@ -34,7 +34,7 @@ catkin_package(LIBRARIES dynamic_reconfigure_config_init_mutex
                CFG_EXTRAS dynamic_reconfigure-extras.cmake
 )
 
-add_library(dynamic_reconfigure_config_init_mutex STATIC
+add_library(dynamic_reconfigure_config_init_mutex
   src/dynamic_reconfigure_config_init_mutex.cpp)
 target_link_libraries(dynamic_reconfigure_config_init_mutex ${Boost_LIBRARIES})
 
