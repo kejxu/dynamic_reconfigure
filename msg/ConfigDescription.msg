@@ -1,4 +1,4 @@
 Group[] groups
-Config max
-Config min
+Config max_value
+Config min_value
 Config dflt
