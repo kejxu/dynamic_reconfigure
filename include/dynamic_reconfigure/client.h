@@ -224,7 +224,7 @@ class Client {
                            const ros::Duration& timeout = ros::Duration(0)) {
     ConfigDescription answer;
     if (getDescription(answer, timeout)) {
-      configuration.__fromMessage__(answer.min);
+      configuration.__fromMessage__(answer.min_value);
       return true;
     } else {
       return false;
@@ -242,7 +242,7 @@ class Client {
                            const ros::Duration& timeout = ros::Duration(0)) {
     ConfigDescription answer;
     if (getDescription(answer, timeout)) {
-      configuration.__fromMessage__(answer.max);
+      configuration.__fromMessage__(answer.max_value);
       return true;
     } else {
       return false;
