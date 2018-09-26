@@ -125,7 +125,7 @@ TEST(dynamic_reconfigure_simple_client, multipleClients) {
   Client<TestConfig> client2("/ref_server", &configurationCallback);
   Client<TestConfig> client3("/ref_server", &configurationCallback);
   client3.setConfiguration(TestConfig::__getDefault__());
-  ros::Duration(0.2).sleep();
+  ros::Duration(0.5).sleep(); // increase sleep time for Windows
   EXPECT_EQ(0, CONFIG.int_);
   client1.setConfiguration(TestConfig::__getMin__());
   ros::Duration(0.2).sleep();

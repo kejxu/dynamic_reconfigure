@@ -77,7 +77,7 @@ class TestSimpleDynamicReconfigureClient(unittest.TestCase):
 
     def testmultibytestring(self):
         client = dynamic_reconfigure.client.Client("ref_server", timeout=5)
-        config = client.get_configuration(timeout=5)
+        config = client.get_configuration(timeout=10.0) # increase the timeout value for Windows, it takes longer to get the configuration if run on Window
         self.assertEqual('bar', config['mstr_'])
 
         # Kanji for konnichi wa (hello)
