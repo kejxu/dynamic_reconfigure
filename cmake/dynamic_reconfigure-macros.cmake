@@ -30,7 +30,7 @@ macro(generate_dynamic_reconfigure_options)
     # we need to explicitly add the devel space to the PYTHONPATH
     # since it might contain dynamic_reconfigure or Python code of the current package
     set("_CUSTOM_PYTHONPATH_ENV")
-    #if(EXISTS "${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_PYTHON_DESTINATION}")
+    if(EXISTS "${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_PYTHON_DESTINATION}")
       if(WIN32)
         configure_file(
           "${dynamic_reconfigure_BASE_DIR}/cmake/setup_custom_pythonpath.bat.in"
@@ -46,7 +46,7 @@ macro(generate_dynamic_reconfigure_options)
         )
         set("_CUSTOM_PYTHONPATH_ENV" "${CMAKE_CURRENT_BINARY_DIR}/setup_custom_pythonpath.sh")
       endif()
-    #endif()
+    endif()
 
     assert(CATKIN_ENV)
     set(_cmd
